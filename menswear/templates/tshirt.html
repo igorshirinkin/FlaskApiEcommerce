@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+{% block body %}
+<!-- Page Content -->
+<div id="catalog-section" class="light-grey-section tshirt-section">
+    <div class="container">
+        <div class="row">
+            {% for product in tshirt %}
+            {% if product.category == 'tshirt' %}
+            <div class="col-md-4">
+                <a href="/{{product.category}}?view={{product.id}}" class="item-grid text-center">
+                    <div class="image id_{{product.id}}" style="background-image: url('/static/image/product/{{product.category}}/{{product.picture}}')"></div>
+                    <div class="v-align">
+                        <div class="v-align-middle">
+                            <h3 class="title">{{ product.pName}}</h3>
+                            <h5 class="price">${{product.price}}</h5>
+                            <span class="btn btn-primary animated">Order now</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div><!-- /.row -->
+        <div class="container">
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item"><a class="page-link" href="{{ url_for('tshirt', page=prev_page) }}">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="{{ url_for('tshirt', page=0) }}">0</a></li>
+                    <li class="page-item"><a class="page-link" href="{{ url_for('tshirt', page=1) }}">1</a></li>
+                    <li class="page-item"><a class="page-link" href="{{ url_for('tshirt', page=2) }}">2</a></li>
+                    <li class="page-item"><a class="page-link" href="{{ url_for('tshirt', page=next_page) }}">Next</a></li>
+                </ul>
+            </nav>
+        </div><!-- /.container -->
+    </div><!-- /.container -->
+</div><!-- /.catalog-section -->
+{% endblock %}

@@ -1,0 +1,143 @@
+{% extends 'layout.html' %}
+{% block body %}
+<!-- Hero content-->
+<div class="hero" id="hero" style="background-image: url(static/image/bg.jpg);">
+    <div class="cover">
+        <div class="desc">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="text-center">Welcome <br> to Men's Wear store</b></h2>
+                        <div class="mouse-container">
+                            <a href="#catalog-section" class="smoothscroll">
+                                <div class="mouse">
+                                    <span class="scroll-down"></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div><!--/.col-md-12-->
+                </div><!--/.row-->
+            </div>
+        </div>
+    </div>
+</div><!-- ./Hero content-->
+
+<!-- Page Content -->
+<div id="catalog-section" class="light-grey-section animate__animated animate__fadeIn">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12 col-md-offset-3 text-center catalog-heading">
+                <h2>T-Shirts</h2>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+            </div>
+        </div>
+
+        <div class="row">
+            {% for product in tshirt %}
+            {% if product.category == 'tshirt' %}
+            <div class="col-md-4 ">
+                <a href="/{{product.category}}?view={{product.id}}" class="item-grid text-center">
+                    <div class="image id_{{product.id}}" style="background-image: url('static/image/product/{{product.category}}/{{product.picture}}')"></div>
+                    <div class="v-align">
+                        <div class="v-align-middle">
+                            <h3 class="title">{{ product.pName}}</h3>
+                            <h5 class="price">${{product.price}}</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+            <div class="col-md-12 text-center ">
+                <p><a href="/tshirt" class="btn btn-primary animated">View More T-Shirts</a></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-md-offset-3 text-center catalog-heading">
+                <h2>Wallets</h2>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+            </div>
+        </div>
+
+        <div class="row">
+            {% for product in wallet %}
+            {% if product.category == 'wallet' %}
+            <div class="col-md-4 ">
+                <a href="/{{product.category}}?view={{product.id}}" class="item-grid text-center">
+                    <div class="image id_{{product.id}}" style="background-image: url('static/image/product/{{product.category}}/{{product.picture}}')"></div>
+                    <div class="v-align">
+                        <div class="v-align-middle">
+                            <h3 class="title">{{ product.pName}}</h3>
+                            <h5 class="price">${{product.price}}</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+            <div class="col-md-12 text-center ">
+                <p><a href="/wallet" class="btn btn-primary animated">View More Wallets</a></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-md-offset-3 text-center catalog-heading">
+                <h2>Belts</h2>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+            </div>
+        </div>
+
+        <div class="row">
+            {% for product in belt %}
+            {% if product.category == 'belt' %}
+            <div class="col-md-4 ">
+                <a href="/{{product.category}}?view={{product.id}}" class="item-grid text-center">
+                    <div class="image id_{{product.id}}" style="background-image: url('static/image/product/{{product.category}}/{{product.picture}}')"></div>
+                    <div class="v-align">
+                        <div class="v-align-middle">
+                            <h3 class="title">{{ product.pName}}</h3>
+                            <h5 class="price">${{product.price}}</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+            <div class="col-md-12 text-center ">
+                <p><a href="/belt" class="btn btn-primary animated">View More Belts </a></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-md-offset-3 text-center catalog-heading ">
+                <h2>Shoes</h2>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+            </div>
+        </div>
+
+        <div class="row">
+            {% for product in shoes %}
+            {% if product.category == 'shoes' %}
+            <div class="col-md-4 ">
+                <a href="/{{product.category}}?view={{product.id}}" class="item-grid text-center">
+                    <div class="image id_{{product.id}}" style="background-image: url('static/image/product/{{product.category}}/{{product.picture}}')"></div>
+                    <div class="v-align">
+                        <div class="v-align-middle">
+                            <h3 class="title">{{ product.pName}}</h3>
+                            <h5 class="price">${{product.price}}</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+            <div class="col-md-12 text-center">
+                <p><a href="/shoes" class="btn btn-primary animated">View More Shoes</a></p>
+            </div>
+        </div>
+
+    </div><!-- /.container -->
+</div><!-- /.section -->
+{% endblock %}

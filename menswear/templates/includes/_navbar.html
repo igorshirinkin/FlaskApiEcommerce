@@ -1,0 +1,30 @@
+<!-- Header -->
+<header id="header" role="banner">
+    <div class="container">
+        <div class="header-inner">
+
+            <h1><a href="/">Men's wear</a></h1>
+
+            <nav role="navigation">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/tshirt">T-Shirts</a></li>
+                    <li><a href="/wallet">Wallet</a></li>
+                    <li><a href="/belt">Belt</a></li>
+                    <li><a href="/shoes">Shoes</a></li>
+                    {% if session.logged_in %}
+                    <li><a href="/profile?user={{session.uid}}">Profile</a></li>
+                    <li><a href="/out">Logout</a></li>
+                    <li class="cta"><a href="/search">Search</a></li>
+                    {% else %}
+                    <li><a href="/register">Signup</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li class="cta"><a href="/search">Search</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+</header> <!-- ./Header content -->
+

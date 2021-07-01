@@ -1,0 +1,12 @@
+flask
+Flask-MySQLdb
+Flask-Uploads
+Flask-Reuploaded
+itsdangerous
+Jinja2
+blinker
+MarkupSafe
+mysqlclient
+passlib
+WTForms
+email_validator

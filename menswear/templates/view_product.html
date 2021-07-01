@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+{% block body %}
+<!-- Page Content -->
+<div id="catalog-section" class="light-grey-section view-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+
+                <div class="row">
+                    {% for product in tshirts %}
+                    <div class="col-lg-6">
+                        <div class="card mt-4">
+                            <img class="card-img-top img-fluid"
+                                src="static/image/product/{{product.category}}/{{product.picture}}" alt="">
+                        </div>
+                    </div><!-- /.card -->
+
+                    <div class="col-lg-6">
+                        <div class="card card-outline-secondary my-4">
+                            <div class="card-header text-center">
+                                Product Details
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">{{ product.pName}}</h3>
+                                <h4>${{ product.price}}</h4>
+                                <p class="card-text">{{ product.description}}</p>
+                                <a href="/{{product.category}}?order={{product.id}}" class="btn btn-primary animated">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- /.card -->
+                </div>
+
+            </div><!-- /.col-lg-9 -->
+        </div><!-- /.row -->
+
+        {% if x == '' %}
+        <h2 class="mb-4 mt-3 text-center">No similar product found</h2>
+        {% else%}
+        <h2 class="mb-4 mt-4 text-center">Similar product for you:</h2>
+        <div class="row">
+            {% for product in x[0] %}
+            <div class="col-md-4">
+                <a href="/{{product.category}}?view={{product.id}}" class="item-grid text-center">
+                    <div class="image id_{{product.id}}" style="background-image: url('static/image/product/{{product.category}}/{{product.picture}}')"></div>
+                    <div class="v-align">
+                        <div class="v-align-middle">
+                            <h3 class="title">{{ product.pName}}</h3>
+                            <h5 class="price">${{product.price}}</h5>
+                            <span class="btn btn-primary animated">Order now</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+    </div><!-- /.catalog-section -->
+</div><!-- /.container -->
+{% endblock %}
