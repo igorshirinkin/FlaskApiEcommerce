@@ -62,7 +62,6 @@ Features:
 - CRUD operations on products (add, delete, edit)
 - Search
 - Getting information about a product by its identifier 
-- REST API
 - Filtering
 
 TODO
