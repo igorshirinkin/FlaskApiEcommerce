@@ -1,5 +1,5 @@
 # Men's wear store
-This is one of my E-commerce API app implementations. It is written in Python with Flask framework as the main dependency.  
+This is one of my E-commerce app implementations. It is written in Python with Flask framework as the main dependency.  
 
 Live demo:
 -------------------
@@ -62,7 +62,6 @@ Features:
 - CRUD operations on products (add, delete, edit)
 - Search
 - Getting information about a product by its identifier 
-- Filtering
 
 TODO
 -------------------
