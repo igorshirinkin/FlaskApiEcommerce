@@ -62,11 +62,11 @@ Features:
 - CRUD operations on products (add, delete, edit)
 - Search
 - Getting information about a product by its identifier 
+- Validations
 
 TODO
 -------------------
 - Unit testing
-- Security, validations, fix vulnerabilities
 - Shopping cart
 
 Contributing
