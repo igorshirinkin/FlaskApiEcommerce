@@ -1,10 +1,6 @@
 # Men's wear store
 This is one of my E-commerce app implementations. It is written in Python with Flask framework as the main dependency.  
 
-Live demo:
--------------------
-[Available soon](Available_soon)  
-
 Access the application:
 -------------------
 
